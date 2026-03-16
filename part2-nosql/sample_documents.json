@@ -1,1 +1,52 @@
-
+[
+  {
+    "_id": "PROD_ELEC_101",
+    "name": "Sony WH-1000XM5 Headphones",
+    "category": "Electronics",
+    "base_price": 299.99,
+    "stock_level": 45,
+    "specifications": {
+      "brand": "Sony",
+      "voltage": "110V-240V",
+      "battery_life": "30 hours",
+      "noise_cancelling": true
+    },
+    "warranty": {
+      "type": "Manufacturer Limited",
+      "duration_months": 12,
+      "coverage": ["Parts", "Labor"]
+    },
+    "tags": ["audio", "wireless", "tech"]
+  },
+  {
+    "_id": "PROD_CLOTH_202",
+    "name": "Premium Cotton Crewneck Tee",
+    "category": "Clothing",
+    "base_price": 25.00,
+    "variants": [
+      { "size": "S", "color": "Navy", "stock": 10 },
+      { "size": "M", "color": "Navy", "stock": 25 },
+      { "size": "L", "color": "Black", "stock": 15 }
+    ],
+    "material": "100% Organic Cotton",
+    "care_instructions": "Machine wash cold, tumble dry low"
+  },
+  {
+    "_id": "PROD_GROC_303",
+    "name": "Greek Style Yogurt - Plain",
+    "category": "Groceries",
+    "base_price": 4.50,
+    "perishable": true,
+    "expiry_date": "2024-04-15",
+    "nutritional_info": {
+      "serving_size": "150g",
+      "calories": 120,
+      "macronutrients": {
+        "protein": "15g",
+        "fats": "2g",
+        "carbs": "6g"
+      },
+      "allergens": ["Dairy"]
+    }
+  }
+]
