@@ -1,7 +1,8 @@
 -- ============================================================================
 -- Part 5.1 — DuckDB Data Lake Queries
 -- ============================================================================
--- HOW TO RUN THESE QUERIES:
+-- HOW TO RUN THESE QUERIES: 
+--   ENSURE ALL FILES ARE IN THE SAME CURRENT FOLDER
 --
 -- Option 1 (From Mac Terminal):
 --   duckdb -column -header -c ".read duckdb_queries.sql"
