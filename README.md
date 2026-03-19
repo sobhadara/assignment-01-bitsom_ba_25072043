@@ -1,9 +1,8 @@
 # assignment-01-bitsom_ba_25072043
 
-
 # Retail Data Management & Analytics Project
 
-This project demonstrates a full data lifecycle: from relational database design (SQL) to flexible document storage (NoSQL) and finally to data warehousing for business intelligence (Star Schema).
+This project demonstrates a full data lifecycle: from relational database design (SQL) and NoSQL document storage to modern Data Lakehouse architectures and automated data cleaning.
 
 ## Project Structure
 
@@ -20,10 +19,19 @@ This project demonstrates a full data lifecycle: from relational database design
 ### 📂 Part 3: Data Warehouse & ETL
 - **`star_schema.sql`**: A dimensional model (Fact and Dimension tables) optimized for analytical reporting.
 - **`dw_queries.sql`**: Complex OLAP queries to calculate revenue trends and store performance.
-- **`etl_notes.md`**: Documentation of the Extract, Transform, and Load decisions made to clean the raw transactional data.
+- **`etl_notes.md`**: Documentation of the Extract, Transform, and Load decisions made to clean raw transactional data.
+
+### 📂 Part 4: Data Cleaning & Preprocessing
+- **`embeddings_demo.py`**: Python script using Pandas to automate the cleaning of inconsistent retail datasets.
+- **`cleaning_report.md`**: Summary of transformations, including handling null values, standardizing date formats, and correcting categorical casing.
+
+### 📂 Part 5: Data Lake & DuckDB
+- **`duckdb_queries.sql`**: High-performance "zero-copy" SQL queries performed directly on CSV, JSON, and Parquet files.
+- **`architecture_choice.md`**: An analysis of Data Warehouse vs. Data Lake vs. Data Lakehouse architectures for a fast-growing delivery startup.
 
 ## Key Concepts Covered
-- **ACID Compliance**: Ensuring reliable transactions in SQL.
-- **CAP Theorem**: Balancing Consistency, Availability, and Partition Tolerance.
-- **Star Schema Design**: Separating quantitative measures (Facts) from descriptive attributes (Dimensions).
-- **Data Cleaning**: Handling inconsistent date formats, casing issues, and missing values.
+- **ACID Compliance**: Ensuring reliable transactions in relational systems.
+- **CAP Theorem**: Balancing Consistency, Availability, and Partition Tolerance in distributed databases.
+- **Star Schema Design**: Separating quantitative measures (Facts) from descriptive attributes (Dimensions) for BI.
+- **Modern Data Stack**: Utilizing **DuckDB** for analytical queries on multi-format data lakes without ingestion overhead.
+- **Data Governance**: Understanding the role of **Object Storage** and **ACID transactions** in a Data Lakehouse environment.
