@@ -1,7 +1,7 @@
 -- Schema Design (3NF)
 
 -- 1. Customers Table
-CREATE TABLE Customers (
+CREATE TABLE IF NOT EXISTS Customers (
     customer_id VARCHAR(10) PRIMARY KEY,
     customer_name VARCHAR(100) NOT NULL,
     customer_email VARCHAR(100) NOT NULL,
@@ -9,7 +9,7 @@ CREATE TABLE Customers (
 );
 
 -- 2. Products Table
-CREATE TABLE Products (
+CREATE TABLE IF NOT EXISTS Products (
     product_id VARCHAR(10) PRIMARY KEY,
     product_name VARCHAR(100) NOT NULL,
     category VARCHAR(50) NOT NULL,
@@ -17,7 +17,7 @@ CREATE TABLE Products (
 );
 
 -- 3. SalesReps Table
-CREATE TABLE SalesReps (
+CREATE TABLE IF NOT EXISTS SalesReps (
     sales_rep_id VARCHAR(10) PRIMARY KEY,
     sales_rep_name VARCHAR(100) NOT NULL,
     sales_rep_email VARCHAR(100) NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE SalesReps (
 );
 
 -- 4. Orders Table
-CREATE TABLE Orders (
+CREATE TABLE IF NOT EXISTS Orders (
     order_id VARCHAR(10) PRIMARY KEY,
     customer_id VARCHAR(10) NOT NULL,
     product_id VARCHAR(10) NOT NULL,
@@ -39,28 +39,36 @@ CREATE TABLE Orders (
 
 -- INSERT STATEMENTS (Sample Data)
 
-INSERT INTO Customers VALUES 
+-- Customers Data
+INSERT INTO Customers (customer_id, customer_name, customer_email, customer_city) VALUES 
 ('C001', 'Rohan Mehta', 'rohan@gmail.com', 'Mumbai'),
 ('C002', 'Priya Sharma', 'priya@gmail.com', 'Delhi'),
 ('C003', 'Amit Verma', 'amit@gmail.com', 'Bangalore'),
 ('C005', 'Vikram Singh', 'vikram@gmail.com', 'Mumbai'),
-('C006', 'Neha Gupta', 'neha@gmail.com', 'Delhi');
+('C006', 'Neha Gupta', 'neha@gmail.com', 'Delhi')
+ON CONFLICT DO NOTHING;
 
-INSERT INTO Products VALUES 
+-- Products Data
+INSERT INTO Products (product_id, product_name, category, unit_price) VALUES 
 ('P003', 'Desk Chair', 'Furniture', 8500.00),
 ('P004', 'Notebook', 'Stationery', 120.00),
 ('P005', 'Headphones', 'Electronics', 3200.00),
 ('P006', 'Standing Desk', 'Furniture', 22000.00),
-('P007', 'Pen Set', 'Stationery', 250.00);
+('P007', 'Pen Set', 'Stationery', 250.00)
+ON CONFLICT DO NOTHING;
 
-INSERT INTO SalesReps VALUES 
+-- SalesReps Data
+INSERT INTO SalesReps (sales_rep_id, sales_rep_name, sales_rep_email, office_address) VALUES 
 ('SR01', 'Deepak Joshi', 'deepak@corp.com', 'Mumbai HQ, Nariman Point, Mumbai - 400021'),
 ('SR02', 'Anita Desai', 'anita@corp.com', 'Delhi Office, Connaught Place, New Delhi - 110001'),
-('SR03', 'Ravi Kumar', 'ravi@corp.com', 'South Zone, MG Road, Bangalore - 560001');
+('SR03', 'Ravi Kumar', 'ravi@corp.com', 'South Zone, MG Road, Bangalore - 560001')
+ON CONFLICT DO NOTHING;
 
-INSERT INTO Orders VALUES 
+-- Orders Data
+INSERT INTO Orders (order_id, customer_id, product_id, sales_rep_id, quantity, order_date) VALUES 
 ('ORD1027', 'C002', 'P004', 'SR02', 4, '2023-11-02'),
 ('ORD1114', 'C001', 'P007', 'SR01', 2, '2023-08-06'),
 ('ORD1153', 'C006', 'P007', 'SR01', 3, '2023-02-14'),
 ('ORD1002', 'C002', 'P005', 'SR02', 1, '2023-01-17'),
-('ORD1118', 'C006', 'P007', 'SR02', 5, '2023-11-10');
+('ORD1118', 'C006', 'P007', 'SR02', 5, '2023-11-10')
+ON CONFLICT DO NOTHING;
