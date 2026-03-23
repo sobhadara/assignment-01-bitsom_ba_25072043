@@ -2,7 +2,10 @@
 -- DuckDB Cross-Format Queries (Data Lake)
 -- ============================================================
 
-
+-- I used **cmd** terminal to run my duckDB queries
+-- All 3 datsets and sql-query file must be in the current directory.
+-- Execute the following command:
+-- .read duckdb_queries.sql
 
 -- Q1: List all customers along with total number of orders they have placed
 SELECT 
