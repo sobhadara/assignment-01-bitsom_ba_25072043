@@ -1,52 +1,84 @@
+// Product data stored in flexible JSON format, handling different product specifications.
+
+
 [
   {
     "_id": "PROD_ELEC_101",
     "name": "Sony WH-1000XM5 Headphones",
     "category": "Electronics",
-    "base_price": 299.99,
-    "stock_level": 45,
+    "price": 25999,
+    "stock": 35,
+
     "specifications": {
       "brand": "Sony",
-      "voltage": "110V-240V",
       "battery_life": "30 hours",
-      "noise_cancelling": true
+      "noise_cancellation": true,
+      "connectivity": ["Bluetooth 5.2", "Wired"]
     },
+
     "warranty": {
-      "type": "Manufacturer Limited",
-      "duration_months": 12,
-      "coverage": ["Parts", "Labor"]
+      "type": "Manufacturer",
+      "duration_months": 12
     },
-    "tags": ["audio", "wireless", "tech"]
+
+    "ratings": {
+      "average": 4.7,
+      "reviews_count": 1240
+    },
+
+    "tags": ["audio", "wireless", "premium"]
   },
+
   {
-    "_id": "PROD_CLOTH_202",
-    "name": "Premium Cotton Crewneck Tee",
-    "category": "Clothing",
-    "base_price": 25.00,
-    "variants": [
-      { "size": "S", "color": "Navy", "stock": 10 },
-      { "size": "M", "color": "Navy", "stock": 25 },
-      { "size": "L", "color": "Black", "stock": 15 }
-    ],
-    "material": "100% Organic Cotton",
-    "care_instructions": "Machine wash cold, tumble dry low"
-  },
-  {
-    "_id": "PROD_GROC_303",
-    "name": "Greek Style Yogurt - Plain",
+    "_id": "PROD_GROC_201",
+    "name": "Organic Farm Fresh Milk",
     "category": "Groceries",
-    "base_price": 4.50,
+    "price": 65,
+    "stock": 120,
+
+    "expiry_date": "2024-12-25",
     "perishable": true,
-    "expiry_date": "2024-04-15",
+
+    "supplier": {
+      "name": "Amul",
+      "location": "Gujarat"
+    },
+
     "nutritional_info": {
-      "serving_size": "150g",
-      "calories": 120,
+      "serving_size": "100ml",
+      "calories": 60,
       "macronutrients": {
-        "protein": "15g",
-        "fats": "2g",
-        "carbs": "6g"
-      },
-      "allergens": ["Dairy"]
-    }
+        "protein": "3.2g",
+        "fat": "3.5g",
+        "carbohydrates": "5g"
+      }
+    },
+
+    "storage_instructions": "Keep refrigerated below 4°C"
+  },
+
+  {
+    "_id": "PROD_CLOT_301",
+    "name": "Men's Slim Fit Casual Shirt",
+    "category": "Clothing",
+    "price": 1899,
+    "stock": 50,
+
+    "brand": "Levi's",
+    "material": "100% Cotton",
+
+    "variants": [
+      { "size": "M", "color": "Blue", "stock": 15 },
+      { "size": "L", "color": "Black", "stock": 20 },
+      { "size": "XL", "color": "White", "stock": 15 }
+    ],
+
+    "care_instructions": [
+      "Machine wash cold",
+      "Do not bleach",
+      "Iron at low temperature"
+    ],
+
+    "fit": "Slim Fit"
   }
 ]
